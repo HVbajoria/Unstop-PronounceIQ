@@ -3,3 +3,4 @@ streamlit-webrtc
 numpy
 pandas
 azure-cognitiveservices-speech
+utils
