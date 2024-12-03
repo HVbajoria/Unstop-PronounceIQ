@@ -4,3 +4,4 @@ numpy
 pandas
 azure-cognitiveservices-speech
 utils
+google-generativeai
