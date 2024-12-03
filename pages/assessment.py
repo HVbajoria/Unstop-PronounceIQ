@@ -197,7 +197,7 @@ def startAssessment():
         print('    {}: word: {}\taccuracy score: {}\terror type: {};'.format(
             idx + 1, word.word, word.accuracy_score, word.error_type
         ))
-    st.success("Assessment completed! Click on the button again.")
+    st.success("Assessment completed! Click on the button again.", icon="✅")
 
 def show_assessment_page():
     col1, col2 = st.columns(2)
