@@ -197,6 +197,7 @@ def startAssessment():
         print('    {}: word: {}\taccuracy score: {}\terror type: {};'.format(
             idx + 1, word.word, word.accuracy_score, word.error_type
         ))
+    st.success("Assessment completed! Click on the button again.")
 
 def show_assessment_page():
     col1, col2 = st.columns(2)
@@ -212,7 +213,6 @@ def show_assessment_page():
         if st.session_state.is_recording:
             if st.button("End Assessment"):
                 stop_recording()
-                st.success("Assessment completed! Click on the button again.")
                 # Save recording data
                 # Get the duration of the audio file
                 audio_file_path = 'audio.wav'
