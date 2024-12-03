@@ -13,7 +13,6 @@ def show_history_page():
     # Display recordings as a table
     df = pd.DataFrame(st.session_state.recordings)
     st.dataframe(df.style.set_properties(**{'width': '100%', 'height': 'auto'}))
-    st.dataframe(df)
     
     # View report button
     if st.button("View Report"):
