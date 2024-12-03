@@ -4,22 +4,13 @@ import requests
 import base64
 import json
 import time
-import sounddevice as sd
 import numpy as np
 import os
-import pyaudio
-import wave
-from st_audiorec import st_audiorec
-from bokeh.models.widgets import Button
-from bokeh.models import CustomJS
-from streamlit_bokeh_events import streamlit_bokeh_events
 import wave
 import contextlib
 import json
 import string
-import time
 import threading
-import wave
 import utils
 import sys
 import azure.cognitiveservices.speech as speechsdk
