@@ -37,7 +37,7 @@ def audio_callback(indata, frames, time, status):
         st.session_state.recording_data.extend(indata[:, 0])
 
 def startAssessment():
-
+    st.warning("Recording stopped. Please wait while we process the audio...", icon="⚠️")
     try:
         import azure.cognitiveservices.speech as speechsdk
     except ImportError:
@@ -212,6 +212,7 @@ def show_assessment_page():
         if st.session_state.is_recording:
             if st.button("End Assessment"):
                 stop_recording()
+                st.success("Assessment completed! Click on the button again.")
                 # Save recording data
                 # Get the duration of the audio file
                 audio_file_path = 'audio.wav'
@@ -239,7 +240,7 @@ def show_assessment_page():
     with col2:
         st.markdown("""
         <div style='background-color:#f0f2f6; padding: 20px; border-radius: 10px; color: black;'>
-            <h3 style='color: black;>The Text</h3>
+            <h3>The Text</h3>
             <p>फ्लिपकार्ट फाउंडेशन को 2022 में शुरू किया गया था ताकि फ्लिपकार्ट समूह की ग्रास-रूट लेवल की पहल को समाज के वंचित वर्गों के लिए जारी रखा जा सके। यह देश के विभिन्न राज्यों में ऑन-ग्राउंड संचालन को सक्रिय करता है, फाउंडेशन ने कई एनजीओके साथ सहयोग किया है जो प्रभावशाली कार्य कर रहे हैं। विकलांग बच्चों को समर्थन देने से लेकर वंचित समुदायों की महिलाओं को सशक्त बनाने तक, ये स्टार्टअप भारत में हजारों लोगों के जीवन को बदल रहे हैं। यहां कुछ उपयोगी सहयोगों पर एक नज़र डालें, जिन्होंने कई लोगों के जीवन को बदलने वाले क्षण लाए हैं।</p>
         </div>
         """, unsafe_allow_html=True)
