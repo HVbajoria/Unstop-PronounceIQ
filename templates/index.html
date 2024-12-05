@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Unstop PronounceIQ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+        body {
+            background-image: url('https://d8it4huxumps7.cloudfront.net/uploads/images/6751c9fc44dc8_untitled_design.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>  
+    <div class="container" id="header" style="text-align: center;">
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Medium.png" alt="Logo" style="height: 50px; margin-right: 20px;">
+            <h1> PronounceIQ</h1>
+        </div>
+    </div>
+    <div class="container" id="ttscont">
+        <div class="button-container h-button" id="buttonhear" >
+            <!-- <button class=> -->
+                <!-- <span class="fas fa-headphones"></span>Learn Pronunciation</button> -->
+        </div> 
+
+        <div id="ttsList"></div>
+        <div class="container" id="ttsloader">
+            <div id="loader"></div>
+        </div> 
+    </div>
+
+    <div class="container" id="formcontainer">
+        <form id="reftextform">
+            <textarea style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid; border-image: linear-gradient(to right, #0000FF, #ADD8E6); border-image-slice: 1; font-size: 20px; height: 200px;" id="reftext" rows="6" cols="80" name="reftext" autofocus placeholder="Enter Reference Text here..." oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea>
+        </form>
+        <br>
+    </div>
+
+    <div class="button-container">
+        <button id="randomtt" class="blue-button">
+            <span class="fa fa-random"></span>Get Sample Text</button>
+        <button id="buttonmic" class="green-button">
+            <span class="fa fa-microphone"></span>Record</button>
+    </div>
+
+    <div class="container" id="recordcont">
+        <div id="recordingsList"></div>
+
+        <div class="container" id="recordloader">
+            <div id="loader"></div>
+        </div>
+        
+        <div id="metrics" class="animate-bottom">
+            <div class="container">
+                <div id="summarytable" style="background-color: white; border: 1px solid black;">
+                    <h3>Results</h3>
+                    <table>
+                        <tr>
+                            <th>Accuracy Score</th>
+                            <th>Fluency Score</th>
+                            <th>Completeness Score</th>
+                            <th>Pronunciation Score</th>
+                            <th id="woh">Words Omitted</th>
+                            <th id="wih">Extra Words Spoken</th>
+                        </tr>
+                        <tr>
+                            <td id="accuracyscore"></td>
+                            <td id="fluencyscore"></td>
+                            <td id="completenessscore"></td>
+                            <td id="pronscore"></td>
+                            <td id="wordsomitted"></td>
+                            <td id="wordsinserted"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div id="detailedtable">
+                    <table>
+                        <tr id="wordrow"></tr>
+                        <tr id ="phonemerow"></tr>
+                        <tr id ="scorerow"></tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <footer id=footeralert>Please allow the use of your microphone.</footer>
+    
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+
+</body>
+
+</html>
